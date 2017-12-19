@@ -1,2 +1,2 @@
-# gulp-static-generator-twig
-twig templating starter kit
+# New Site
+You should describe it here.

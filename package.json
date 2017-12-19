@@ -1,0 +1,29 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "You should describe it here.",
+  "main": "gulpfile.js",
+  "author": "Jamie Quinn",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-uglify": "latest",
+    "highlight.js": "latest",
+    "run-sequence": "latest",
+    "gulp-twig": "^1.1.1",
+    "trash": "^3.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {}
+}

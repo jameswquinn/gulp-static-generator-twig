@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{description}}{% endif %}" />
+  <meta name="copyright" content="{% set _block = block('copyright') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{copyright}}{% endif %}" />
+  <meta name="robot" content="noindex, nofollow" />
+  <meta property="og:image" content="{{baseUrl}}{% set _block = block('ogImage') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{ogImage}}{% endif %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta property="og:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{title}}{% endif %}">
+  <meta property="og:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{description}}{% endif %}">
+  <meta property="og:url" content="{{ogUrl}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/css/master.css">
+  <title>{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{title}}{% endif %}</title>
+</head>
+<body>
+{% block content %}{% endblock %}
+{% include '../_includes/_scripts.html' %}
+</body>
+</html>
