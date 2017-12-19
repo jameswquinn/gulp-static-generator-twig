@@ -11,6 +11,8 @@ const uglify    = require('gulp-uglify')
 const bs        = require('browser-sync')
 const runOrder  = require('run-sequence')
 const trash     = require('trash')
+const prettify  = require('gulp-prettify')
+const htmlmin   = require('gulp-htmlmin')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -23,6 +25,8 @@ gulp.task('index', () => {
   gulp.src(structure.src.index)
     .pipe(plumber(reporter.onError))
     .pipe(twig(twigOptions))
+    //.pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(prettify())
     .pipe(gulp.dest(structure.dest.dir))
     .pipe(bs.stream())
 })
@@ -35,6 +39,8 @@ gulp.task('pages', () => {
   gulp.src(structure.src.pages)
     .pipe(plumber(reporter.onError))
     .pipe(twig(twigOptions))
+    //.pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(prettify())
     .pipe(rename(file => {
       file.dirname = require('path').join(file.dirname, file.basename)
       file.basename = 'index'

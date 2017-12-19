@@ -11,14 +11,16 @@
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-prettify": "^0.5.0",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-sourcemaps": "1.6.0",
+    "gulp-twig": "^1.1.1",
     "gulp-uglify": "latest",
     "highlight.js": "latest",
     "run-sequence": "latest",
-    "gulp-twig": "^1.1.1",
     "trash": "^3.4.1"
   },
   "repository": {
