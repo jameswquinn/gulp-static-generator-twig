@@ -25,7 +25,7 @@ gulp.task('index', () => {
   gulp.src(structure.src.index)
     .pipe(plumber(reporter.onError))
     .pipe(twig(twigOptions))
-    //.pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(prettify())
     .pipe(gulp.dest(structure.dest.dir))
     .pipe(bs.stream())
