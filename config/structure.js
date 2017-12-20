@@ -13,7 +13,7 @@ exports.src = {
   index:   `${pages}/index.html`,
   pages:   `${pages}/!(index).html`,
   layouts: `${pages}/**/_*.html`,
-  scss:    `${assets}/${css}/**/*.scss`,
+  scss:    `${assets}/${css}/*.sass`,
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`
