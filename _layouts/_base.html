@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
 <head>
+  {% block head %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,12 +26,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
+  <link type="text/plain" rel="author" href="/humans.txt" />
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="/css/milligram.min.css">
+  <link rel="stylesheet" href="/css/app.min.css">
   <title>{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.title}}{% endif %}</title>
+  {% endblock %}
 </head>
 <body>
+<div id="content">
 {% block content %}{% endblock %}
+</div>
+<div id="footer">
+{% block footer %}{% endblock %}
+</div>
 {% include '../_includes/_scripts.html' %}
 </body>
 </html>

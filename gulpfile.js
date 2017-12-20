@@ -61,7 +61,7 @@ gulp.task('scss', () => {
     .pipe(sourcemap.init())
       .pipe(sass())
       .pipe(prefix('last 2 versions'))
-      .pipe(rename({suffix: '.min'}))
+      .pipe(rename({basename: "app", suffix: '.min'}))
       .pipe(cssnano())
     .pipe(sourcemap.write())
     .pipe(gulp.dest(structure.dest.css))

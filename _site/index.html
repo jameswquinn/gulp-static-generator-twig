@@ -25,35 +25,41 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
+    <link type="text/plain" rel="author" href="/humans.txt">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/css/milligram.min.css">
+    <link rel="stylesheet" href="/css/app.min.css">
     <title>Gulp and Twig</title>
   </head>
   <body>
-    <style>
-      section {
-        width: 70vw;
-        margin: auto;
-      }
-    </style>
-    <section>
-      <h1>index</h1>
-      <blockquote cite="http://www.apple.com">Neon Demon</blockquote>
-      <img src="https://i.pinimg.com/originals/63/00/d7/6300d7105a48cb21d244ec4368268e9a.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero laboriosam, at non debitis beatae, assumenda minima quia hic, quis quos eos aut qui totam fugit vel unde libero dolores reprehenderit!</p>
-      <script src="/js/main.min.js"></script>
-      <!-- Google Analytics -->
-      <script>
-        window.ga = function()
-        {
-          ga.q.push(arguments)
-        };
-        ga.q = [];
-        ga.l = +new Date;
-        ga('create', '', 'auto');
-        ga('send', 'pageview')
-      </script>
-      <script src="https://www.google-analytics.com/analytics.js" async defer="defer"></script>
-    </section>
+    <div id="content">
+      <style>
+        section {
+          width: 70vw;
+          margin: auto;
+        }
+      </style>
+      <section>
+        <h1>index</h1>
+        <blockquote cite="http://www.apple.com">
+          <p>Neon Demon</p>
+        </blockquote>
+        <img src="https://i.pinimg.com/originals/63/00/d7/6300d7105a48cb21d244ec4368268e9a.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero laboriosam, at non debitis beatae, assumenda minima quia hic, quis quos eos aut qui totam fugit vel unde libero dolores reprehenderit!</p>
+      </section>
+    </div>
+    <div id="footer"></div>
+    <script src="/js/main.min.js"></script>
+    <!-- Google Analytics -->
+    <script>
+      window.ga = function()
+      {
+        ga.q.push(arguments)
+      };
+      ga.q = [];
+      ga.l = +new Date;
+      ga('create', '', 'auto');
+      ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer="defer"></script>
   </body>
 </html>
