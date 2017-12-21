@@ -3,22 +3,19 @@
 {% block description %}orem ipsum dolor sit amet, consectetur adipisicing elit. Vero laboriosam, at non debitis beatae, assumenda minima quia hic, quis quos eos aut qui totam fugit vel unde libero dolores reprehenderit!{% endblock %}
 {% block ogImage %}https://i.pinimg.com/originals/63/00/d7/6300d7105a48cb21d244ec4368268e9a.jpg{% endblock %}
 {% block content %}
-<style>
-section {
-  width: 70vw;
-  margin: auto;
-}
-</style>
-<section>
+
+<main class="container">
     <h1>index</h1>
 
     <blockquote cite="http://www.apple.com">
       <p>Neon Demon</p>
-      {{ "now"|date('l jS \of F Y h:i:s A') }}
+      {{ "now"|date('l jS \of F Y h:i:s A') }}<br/>
+
+      {{ "now"|date("F jS \a\t g:ia")}}
 
 
     </blockquote>
     <img src="https://i.pinimg.com/originals/63/00/d7/6300d7105a48cb21d244ec4368268e9a.jpg" alt="">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero laboriosam, at non debitis beatae, assumenda minima quia hic, quis quos eos aut qui totam fugit vel unde libero dolores reprehenderit!</p>
     {% endblock %}
-</section>
+</main>

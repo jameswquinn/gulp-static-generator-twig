@@ -1,4 +1,6 @@
-const twigMarkdown = require('twig-markdown')
+// https://github.com/colynb/gulp-swig
+// https://github.com/mvhenten/swig-marked
+// https://github.com/isagalaev/highlight.js
 const swig = require('gulp-twig')
 
 module.exports = {
@@ -11,10 +13,9 @@ data: {
         longform__description: 'longform__description',
         shortform__description: 'shortform__description',
         copyright: 'J Quinn ©2017',
-        og__image: 'https://assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg',
+        ogImage: 'https://assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg',
         ogUrl: 'http://example.com',
         baseUrl: ''
         }
-    },
-extend: twigMarkdown
+    }
 }

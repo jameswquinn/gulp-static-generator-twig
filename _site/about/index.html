@@ -29,12 +29,26 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="/css/app.min.css">
     <title>Gulp and Twig</title>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "http://website.com",
+        "name": "wbs",
+        "description": "shortform__description"
+      }
+    </script>
   </head>
   <body>
     <div id="content">
-      <h1>about</h1>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Carolina_Herrera_AW14_12.jpg" alt="">
-      <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, animi quam, architecto voluptatem, pariatur maiores harum placeat voluptatibus neque quae dolorem nisi beatae mollitia impedit ad consectetur porro, laborum.</blockquote>
+      <main class="container">
+        <h1>about</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Carolina_Herrera_AW14_12.jpg" alt="">
+        <img src="https://d21e8thgsgi8s5.cloudfront.net/sites/default/files/styles/blog_author/public/pictures/lV2Hprnr-85.jpg" alt="">
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, animi quam, architecto voluptatem, pariatur maiores harum placeat voluptatibus neque quae dolorem nisi beatae mollitia impedit ad consectetur porro, laborum.</blockquote>
+        <h1 id="embed">Embed</h1>
+        <p>markdown directly in your template…</p>
+      </main>
     </div>
     <div id="footer"> </div>
     <script src="/js/main.min.js"></script>
@@ -46,7 +60,7 @@
       };
       ga.q = [];
       ga.l = +new Date;
-      ga('create', '', 'auto');
+      ga('create', '<SITE KEY HERE> e.g. UA-XXXXX-J', 'auto');
       ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>

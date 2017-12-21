@@ -19,7 +19,8 @@
     "gulp-uglify": "latest",
     "highlight.js": "latest",
     "run-sequence": "latest",
-    "trash": "^3.4.1"
+    "trash": "^3.4.1",
+    "twig-markdown": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {

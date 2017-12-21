@@ -29,22 +29,26 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="/css/app.min.css">
     <title>Gulp and Twig</title>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "http://website.com",
+        "name": "wbs",
+        "description": "shortform__description"
+      }
+    </script>
   </head>
   <body>
     <div id="content">
-      <style>
-        section {
-          width: 70vw;
-          margin: auto;
-        }
-      </style>
-      <section>
+      <main class="container">
         <h1>index</h1>
         <blockquote cite="http://www.apple.com">
-          <p>Neon Demon</p>Wednesday 20th of December 2017 11:42:48 PM</blockquote>
+          <p>Neon Demon</p>Thursday 21st of December 2017 08:13:44 PM
+          <br>December 21st at 8:13pm</blockquote>
         <img src="https://i.pinimg.com/originals/63/00/d7/6300d7105a48cb21d244ec4368268e9a.jpg" alt="">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero laboriosam, at non debitis beatae, assumenda minima quia hic, quis quos eos aut qui totam fugit vel unde libero dolores reprehenderit!</p>
-      </section>
+      </main>
     </div>
     <div id="footer"></div>
     <script src="/js/main.min.js"></script>
@@ -56,7 +60,7 @@
       };
       ga.q = [];
       ga.l = +new Date;
-      ga('create', '', 'auto');
+      ga('create', '<SITE KEY HERE> e.g. UA-XXXXX-J', 'auto');
       ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer="defer"></script>
