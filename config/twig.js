@@ -12,7 +12,8 @@ data: {
         shortform__description: 'shortform__description',
         copyright: 'J Quinn ©2017',
         og__image: 'https://assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg',
-        ogUrl: 'http://example.com',
+        og__alt: '',
+        og__url: 'http://example.com',
         baseUrl: ''
         }
     },

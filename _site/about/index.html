@@ -41,13 +41,80 @@
   </head>
   <body>
     <div id="content">
+      <!-- Navigation Partial -->
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
       <main class="container">
         <h1>about</h1>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Carolina_Herrera_AW14_12.jpg" alt="">
         <img src="https://d21e8thgsgi8s5.cloudfront.net/sites/default/files/styles/blog_author/public/pictures/lV2Hprnr-85.jpg" alt="">
         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, animi quam, architecto voluptatem, pariatur maiores harum placeat voluptatibus neque quae dolorem nisi beatae mollitia impedit ad consectetur porro, laborum.</blockquote>
         <h1 id="embed">Embed</h1>
-        <p>markdown directly in your template…</p>
+        <p>markdown directly in your template… Colons can be used to align columns.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tables</th>
+              <th style="text-align:center">Are</th>
+              <th style="text-align:right">Cool</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>col 3 is</td>
+              <td style="text-align:center">right-aligned</td>
+              <td style="text-align:right">$1600</td>
+            </tr>
+            <tr>
+              <td>col 2 is</td>
+              <td style="text-align:center">centered</td>
+              <td style="text-align:right">$12</td>
+            </tr>
+            <tr>
+              <td>zebra stripes</td>
+              <td style="text-align:center">are neat</td>
+              <td style="text-align:right">$1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don&#39;t need to make the raw Markdown line up prettily. You can also use inline Markdown.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Markdown</th>
+              <th>Less</th>
+              <th>Pretty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <em>Still</em>
+              </td>
+              <td><code>renders</code></td>
+              <td>
+                <strong>nicely</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 id="h1">H1</h1>
+        <h2 id="h2">H2</h2>
+        <h3 id="h3">H3</h3>
+        <h4 id="h4">H4</h4>
+        <h5 id="h5">H5</h5>
+        <h6 id="h6">H6</h6>
+        <p>Alternatively, for H1 and H2, an underline-ish style:</p>
+        <h1 id="alt-h1">Alt-H1</h1>
+        <h2 id="alt-h2">Alt-H2</h2>
       </main>
     </div>
     <div id="footer"> </div>
