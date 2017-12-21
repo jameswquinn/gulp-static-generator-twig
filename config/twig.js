@@ -5,7 +5,7 @@ module.exports = {
 data: {
       site: {
         google__analytics: '<SITE KEY HERE> e.g. UA-XXXXX-J',
-        siteName: '@Burberryltd',
+        site__name: '@Burberryltd',
         lang: 'en',
         title: 'Gulp and Twig',
         longform__description: 'longform__description',
@@ -14,8 +14,9 @@ data: {
         og__image: 'https://assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg',
         og__alt: '',
         og__url: 'http://example.com',
-        baseUrl: ''
-        }
+        base__url: ''
+      },
+      nav: [{link:'home',href:'/'}, {link:'about',href:'/about'}, {link:'contact',href:'/contact'}]
     },
 extend: twigMarkdown
 }

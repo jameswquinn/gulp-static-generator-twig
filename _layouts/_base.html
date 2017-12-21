@@ -19,8 +19,8 @@
   <meta property="og:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.shortform__description}}{% endif %}">
   <meta property="og:url" content="{{site.og__url}}">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="{{site.siteName}}" />
-  <meta name="twitter:image" content="{{site.baseUrl}}{% set _block = block('ogImage') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__image}}{% endif %}"/>
+  <meta name="twitter:site" content="{{site.site__name}}" />
+  <meta name="twitter:image" content="{{site.base__url}}{% set _block = block('ogImage') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__image}}{% endif %}"/>
   <meta name="twitter:image:alt" content="{% set _block = block('og__alt') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__alt}}{% endif %}" />
   <meta name="twitter:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.title}}{% endif %}"/>
   <meta name="twitter:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.shortform__description}}{% endif %}"/>
