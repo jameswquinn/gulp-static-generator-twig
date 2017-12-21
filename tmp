@@ -1,8 +1,4 @@
-const twigMarkdown = require('twig-markdown')
-const swig = require('gulp-twig')
-
-module.exports = {
-data: {
+{
     "site": {
         "google__analytics": "<SITEKEYHERE>e.g.UA-XXXXX-J",
         "site__name": "@Burberryltd",
@@ -22,14 +18,12 @@ data: {
             "href": "/"
         },
         {
-            "link": "about",
-            "href": "/about"
+        "link": "about",
+        "href": "/about"
         },
         {
-            "link": "contact",
-            "href": "/contact"
+        "link": "contact",
+        "href": "/contact"
         }
     ]
-},
-extend: twigMarkdown
 }
