@@ -6,7 +6,8 @@ const css    = 'css'
 const js     = 'js'
 const img    = 'img'
 const misc   = 'misc'
-const clean   = '{!.git,*}'
+const clean  = '{!.git,*}'
+const map    =  'map'
 
 // Where to look for source files
 exports.src = {
@@ -16,7 +17,8 @@ exports.src = {
   scss:    `${assets}/${css}/*.sass`,
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
-  misc:    `${misc}/**/*`
+  misc:    `${misc}/**/*`,
+  map:     `${build}/**/*.html`,
 }
 
 // Where to build your site

@@ -14,6 +14,7 @@ const runOrder  = require('run-sequence')
 const trash     = require('trash')
 const prettify  = require('gulp-prettify')
 const htmlmin   = require('gulp-htmlmin')
+const sitemap   = require('gulp-sitemap')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -104,6 +105,12 @@ gulp.task('clean', () => {
   trash([structure.dest.clean]).then(() => {
     console.log(`'${structure.dest.dir}' contents moved to trash.`);
   })
+})
+
+gulp.task('sitemap', () => {
+  gulp.src(structure.src.map)
+        .pipe(sitemap({siteUrl: 'https://www.your_url_here.co'}))
+        .pipe(gulp.dest(structure.dest.dir));
 })
 
 // Launch the dev server and watch for changes
