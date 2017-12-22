@@ -15,7 +15,8 @@ const trash     = require('trash')
 const prettify  = require('gulp-prettify')
 const htmlmin   = require('gulp-htmlmin')
 const sitemap   = require('gulp-sitemap')
-const robots = require('gulp-robots');
+const robots    = require('gulp-robots')
+const humans    = require('gulp-humans')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -120,6 +121,24 @@ gulp.task('robots', function () {
             useragent: '*',
             allow: ['folder1/', 'folder2/'],
             disallow: ['cgi-bin/']
+        }))
+        .pipe(gulp.dest(structure.dest.misc));
+})
+
+
+gulp.task('humans', function () {
+    gulp.src(structure.src.map)
+        .pipe(humans({
+            thanks: [
+                'Node (@nodejs on Twitter)',
+                'Gulp (@gulpjs on Twitter)'
+            ],
+            site: [
+                'Standards: HTML5, CSS3',
+                'Components: jQuery, Normalize.css',
+                'Software: Atom'
+            ],
+            note: 'Built with love by ...'
         }))
         .pipe(gulp.dest(structure.dest.misc));
 })

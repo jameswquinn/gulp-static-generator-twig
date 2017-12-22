@@ -10,6 +10,7 @@
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-humans": "^2.0.2",
     "gulp-plumber": "^1.1.0",
     "gulp-prettify": "^0.5.0",
     "gulp-rename": "latest",
