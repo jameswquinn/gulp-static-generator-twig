@@ -18,7 +18,7 @@ exports.src = {
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`,
-  map:     `${build}/**/*.html`,
+  map:     `${build}/**/*.html`
 }
 
 // Where to build your site

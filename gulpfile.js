@@ -15,6 +15,7 @@ const trash     = require('trash')
 const prettify  = require('gulp-prettify')
 const htmlmin   = require('gulp-htmlmin')
 const sitemap   = require('gulp-sitemap')
+const robots = require('gulp-robots');
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -111,6 +112,16 @@ gulp.task('sitemap', () => {
   gulp.src(structure.src.map)
         .pipe(sitemap({siteUrl: 'https://www.your_url_here.co'}))
         .pipe(gulp.dest(structure.dest.dir));
+})
+
+gulp.task('robots', function () {
+    gulp.src(structure.src.map)
+        .pipe(robots({
+            useragent: '*',
+            allow: ['folder1/', 'folder2/'],
+            disallow: ['cgi-bin/']
+        }))
+        .pipe(gulp.dest(structure.dest.misc));
 })
 
 // Launch the dev server and watch for changes
