@@ -17,6 +17,7 @@ const htmlmin   = require('gulp-htmlmin')
 const sitemap   = require('gulp-sitemap')
 const robots    = require('gulp-robots')
 const humans    = require('gulp-humans')
+const deploy    = require('gulp-deploy-git')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -142,6 +143,21 @@ gulp.task('humans', function () {
         }))
         .pipe(gulp.dest(structure.dest.misc));
 })
+
+
+/*
+gulp.task('deploy', function() {
+  return gulp.src(structure.src.misc)
+    .pipe(deploy({
+      repository: 'https://username@github.com/username/my-repo.git',
+      branches:   ['master']
+    }))
+    .pipe(deploy({
+      repository: 'https://username@github.com/username/my-staging-repo.git',
+      branches:   ['staging']
+    }));
+})
+*/
 
 // Launch the dev server and watch for changes
 gulp.task('serve', () => {

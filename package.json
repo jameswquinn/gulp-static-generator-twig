@@ -9,6 +9,7 @@
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
+    "gulp-deploy-git": "^0.5.3",
     "gulp-htmlmin": "^3.0.0",
     "gulp-humans": "^2.0.2",
     "gulp-plumber": "^1.1.0",
