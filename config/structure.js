@@ -1,5 +1,5 @@
 // Folder Structure Defaults
-const build  = '_site'
+const build  = '_gh_pages'
 const pages  = '_pages'
 const assets = 'assets'
 const css    = 'css'
@@ -7,7 +7,7 @@ const js     = 'js'
 const img    = 'img'
 const misc   = 'misc'
 const clean  = '{!.git,*}'
-const map    =  'map'
+const posts = '_posts'
 
 // Where to look for source files
 exports.src = {
@@ -18,7 +18,9 @@ exports.src = {
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`,
-  map:     `${build}/**/*.html`
+  posts:   `${posts}/**/*.md`,
+  root: `${build}/**/*.html`,
+  deploy:  `${build}/**/**/*`
 }
 
 // Where to build your site

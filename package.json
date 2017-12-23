@@ -12,6 +12,7 @@
     "gulp-deploy-git": "^0.5.3",
     "gulp-htmlmin": "^3.0.0",
     "gulp-humans": "^2.0.2",
+    "gulp-permalinks": "^0.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-prettify": "^0.5.0",
     "gulp-rename": "latest",
@@ -22,6 +23,7 @@
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "latest",
     "highlight.js": "latest",
+    "moment": "^2.20.1",
     "run-sequence": "latest",
     "trash": "^3.4.1",
     "twig-markdown": "^0.1.2"
