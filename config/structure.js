@@ -19,7 +19,7 @@ exports.src = {
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`,
   posts:   `${posts}/**/*.md`,
-  root: `${build}/**/*.html`,
+  root:    `${build}/**/*.html`,
   deploy:  `${build}/**/**/*`
 }
 
@@ -29,6 +29,5 @@ exports.dest = {
   css:   `${build}/${css}`,
   js:    `${build}/${js}`,
   img:   `${build}/${img}`,
-  clean: `${build}/${clean}`,
-  misc:  `${build}/`
+  clean: `${build}/${clean}`
 }

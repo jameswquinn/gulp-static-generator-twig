@@ -106,7 +106,7 @@ gulp.task('img', () => {
 gulp.task('misc', () => {
     gulp.src(structure.src.misc)
         .pipe(plumber(reporter.onError))
-        .pipe(gulp.dest(structure.dest.misc))
+        .pipe(gulp.dest(structure.dest.dir))
         .pipe(bs.stream())
 })
 
@@ -181,9 +181,38 @@ gulp.task('permalinks', () => {
     gulp.src(structure.src.posts)
         .pipe(permalinks('blog/:date/:foo.html', options))
         .pipe(gulp.dest(structure.dest.dir));
-});
+})
 
 // writes to '_gh_pages/blog/2017/02/15/MY-FILE-STEM.html'
+
+/*
+
+var critical = require('critical');
+
+gulp.task('critical', function (cb) {
+  critical.generate({
+    base: '_site/',
+    src: 'index.html',
+    css: ['css/all.min.css'],
+    dimensions: [{
+      width: 320,
+      height: 480
+    },{
+      width: 768,
+      height: 1024
+    },{
+      width: 1280,
+      height: 960
+    }],
+    dest: '../_includes/critical.css',
+    minify: true,
+    extract: false,
+    ignore: ['font-face']
+  });
+});
+
+
+*/
 
 // Launch the dev server and watch for changes
 gulp.task('serve', () => {
