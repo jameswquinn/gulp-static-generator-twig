@@ -1,7 +1,7 @@
 {# base layout #}
 
 <!DOCTYPE html>
-<html lang="{{head.set__lang}}">
+<html lang="{{site.set__lang}}">
 <head>
   {% block head %}
   <meta charset="UTF-8">
@@ -9,21 +9,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="pragma" content="no-cache" />
-  <meta name="description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.longform__description}}{% endif %}" />
-  <meta name="copyright" content="{% set _block = block('copyright') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.copyright}}{% endif %}" />
+  <meta name="description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.longform__description}}{% endif %}" />
+  <meta name="copyright" content="{% set _block = block('copyright') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.copyright}}{% endif %}" />
   <meta name="robot" content="noindex, nofollow" />
-  <meta property="og:image" content="{{head.base__url}}{% set _block = block('ogImage') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.og__image}}{% endif %}">
+  <meta property="og:image" content="{{site.base__url}}{% set _block = block('ogImage') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__image}}{% endif %}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
-  <meta property="og:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.title}}{% endif %}">
-  <meta property="og:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.shortform__description}}{% endif %}">
-  <meta property="og:url" content="{{head.og__url}}">
+  <meta property="og:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.title}}{% endif %}">
+  <meta property="og:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.shortform__description}}{% endif %}">
+  <meta property="og:url" content="{{site.og__url}}">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="{{head.site__name}}" />
-  <meta name="twitter:image" content="{{head.base__url}}{% set _block = block('og__image') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.og__image}}{% endif %}"/>
-  <meta name="twitter:image:alt" content="{% set _block = block('og__alt') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.og__alt}}{% endif %}" />
-  <meta name="twitter:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.title}}{% endif %}"/>
-  <meta name="twitter:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.shortform__description}}{% endif %}"/>
+  <meta name="twitter:site" content="{{site.site__name}}" />
+  <meta name="twitter:image" content="{{site.base__url}}{% set _block = block('og__image') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__image}}{% endif %}"/>
+  <meta name="twitter:image:alt" content="{% set _block = block('og__alt') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.og__alt}}{% endif %}" />
+  <meta name="twitter:title" content="{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.title}}{% endif %}"/>
+  <meta name="twitter:description" content="{% set _block = block('description') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.shortform__description}}{% endif %}"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,14 +31,14 @@
   <link type="text/plain" rel="author" href="/humans.txt" />
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/css/app.min.css">
-  <title>{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{head.title}}{% endif %}</title>
+  <title>{% set _block = block('title') %}{% if _block is not empty %}{{ _block|raw }}{% else %}{{site.title}}{% endif %}</title>
   <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "url": "{{head.og__url}}",
-    "name": "{{head.site__name}}",
-    "description": "{{head.shortform__description}}"
+    "url": "{{site.og__url}}",
+    "name": "{{site.site__name}}",
+    "description": "{{site.shortform__description}}"
 }
 </script>
   {% endblock %}

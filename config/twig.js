@@ -3,7 +3,7 @@ const twig = require('gulp-twig')
 
 module.exports = {
 data: {
-    "head": {
+    "site": {
         "google__analytics": "<SITEKEYHERE>e.g.UA-XXXXX-J",
         "site__name": "<SITE NAME HERE>",
         "set__lang": "en",
@@ -18,19 +18,19 @@ data: {
     },
     "nav": [
         {
-            "link": "home",
+            "label": "home",
             "href": "/",
+            "weight": 0
+        },
+        {
+            "label": "about",
+            "href": "/about",
             "weight": 1
         },
         {
-            "link": "about",
-            "href": "/about",
-            "weight": 2
-        },
-        {
-            "link": "contact",
+            "label": "contact",
             "href": "/contact",
-            "weight": 3
+            "weight": 2
         }
     ]
 },

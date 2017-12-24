@@ -20,6 +20,9 @@ const humans = require('gulp-humans')
 const deploy = require('gulp-deploy-git')
 const permalinks = require('gulp-permalinks')
 const moment = require('moment')
+const cleanCSS = require('gulp-clean-css')
+const babel = require('gulp-babel')
+const sassLint = require('gulp-sass-lint')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -64,10 +67,9 @@ gulp.task('pages', () => {
 // 3. Add vendor prefixes
 // 4. Rename to '*.min.css'
 // 5. Minify the final CSS
-gulp.task('scss', () => {
+gulp.task('!scss', () => {
     gulp.src(structure.src.scss)
         .pipe(plumber(reporter.onError))
-        .pipe(sourcemap.init())
         .pipe(sass())
         .pipe(prefix('last 2 versions'))
         .pipe(rename({
@@ -75,10 +77,29 @@ gulp.task('scss', () => {
             suffix: '.min'
         }))
         .pipe(cssnano())
-        .pipe(sourcemap.write())
         .pipe(gulp.dest(structure.dest.css))
         .pipe(bs.stream())
 })
+
+gulp.task('scss',() => {
+  return gulp.src(structure.src.scss)
+    .pipe(plumber(reporter.onError))
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+    .pipe(sourcemap.init())
+    .pipe(sass())
+    .pipe(prefix('last 2 versions'))
+    .pipe(rename({
+        basename: "app",
+        suffix: '.min'
+    }))
+    .pipe(cssnano())
+    .pipe(cleanCSS())
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest(structure.dest.css))
+    .pipe(bs.stream())
+});
 
 // 1. Initialize sourcemaps
 // 2. Concatenate files and rename
@@ -106,7 +127,7 @@ gulp.task('img', () => {
 gulp.task('misc', () => {
     gulp.src(structure.src.misc)
         .pipe(plumber(reporter.onError))
-        .pipe(gulp.dest(structure.dest.dir))
+        .pipe(gulp.dest(structure.dest.misc))
         .pipe(bs.stream())
 })
 
@@ -179,40 +200,11 @@ gulp.task('permalinks', () => {
     }
 
     gulp.src(structure.src.posts)
-        .pipe(permalinks('blog/:date/:foo.html', options))
+        .pipe(permalinks('blog/:date/:foo.md', options))
         .pipe(gulp.dest(structure.dest.dir));
-})
-
-// writes to '_gh_pages/blog/2017/02/15/MY-FILE-STEM.html'
-
-/*
-
-var critical = require('critical');
-
-gulp.task('critical', function (cb) {
-  critical.generate({
-    base: '_site/',
-    src: 'index.html',
-    css: ['css/all.min.css'],
-    dimensions: [{
-      width: 320,
-      height: 480
-    },{
-      width: 768,
-      height: 1024
-    },{
-      width: 1280,
-      height: 960
-    }],
-    dest: '../_includes/critical.css',
-    minify: true,
-    extract: false,
-    ignore: ['font-face']
-  });
 });
 
-
-*/
+// writes to '_gh_pages/blog/2017/02/15/MY-FILE-STEM.html'
 
 // Launch the dev server and watch for changes
 gulp.task('serve', () => {

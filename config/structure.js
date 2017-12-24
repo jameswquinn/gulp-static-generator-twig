@@ -14,12 +14,12 @@ exports.src = {
   index:   `${pages}/index.html`,
   pages:   `${pages}/!(index).html`,
   layouts: `${pages}/**/_*.html`,
-  scss:    `${assets}/${css}/*.sass`,
+  scss:    `${assets}/${css}/*.{scss,sass}`,
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`,
-  posts:   `${posts}/**/*.md`,
-  root:    `${build}/**/*.html`,
+  posts:   `${posts}/**/*.{markdown,md}`,
+  root: `${build}/**/*.html`,
   deploy:  `${build}/**/**/*`
 }
 
@@ -29,5 +29,6 @@ exports.dest = {
   css:   `${build}/${css}`,
   js:    `${build}/${js}`,
   img:   `${build}/${img}`,
-  clean: `${build}/${clean}`
+  clean: `${build}/${clean}`,
+  misc:  `${build}/`
 }
