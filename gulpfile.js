@@ -47,10 +47,6 @@ gulp.task('index', () => {
         .pipe(bs.stream())
 })
 
-// 1. Get the page's basename
-// 2. Make a new directory from the name
-// 3. Rename the file to 'index.html'
-// 4. Save 'basename/index.html' it in 'dest' dir
 gulp.task('pages', () => {
     gulp.src(structure.src.pages)
         .pipe(plumber(reporter.onError))
@@ -66,11 +62,6 @@ gulp.task('pages', () => {
         .pipe(bs.stream())
 })
 
-// 1. Initialize sourcemaps
-// 2. Compile SCSS
-// 3. Add vendor prefixes
-// 4. Rename to '*.min.css'
-// 5. Minify the final CSS
 gulp.task('scss',() => {
    gulp.src(structure.src.scss)
     .pipe(plumber(reporter.onError))
@@ -90,18 +81,6 @@ gulp.task('scss',() => {
     .pipe(bs.stream())
 })
 
-gulp.task('lint__scss',() => {
-   gulp.src(structure.src.scss)
-    .pipe(plumber(reporter.onError))
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
-.pipe(gulp.dest(structure.dest.css))
-})
-
-// 1. Initialize sourcemaps
-// 2. Concatenate files and rename
-// 3. Minify the final JS
 gulp.task('js', () => {
     gulp.src(structure.src.js)
         .pipe(plumber(reporter.onError))
@@ -113,7 +92,6 @@ gulp.task('js', () => {
         .pipe(bs.stream())
 })
 
-// Copy all the images
 gulp.task('img', function () {
   return gulp.src(structure.src.img)
   .pipe(plumber(reporter.onError))
@@ -122,10 +100,28 @@ gulp.task('img', function () {
     .pipe(bs.stream())
 })
 
-// Copy all the files in /misc
 gulp.task('misc', () => {
     gulp.src(structure.src.misc)
         .pipe(plumber(reporter.onError))
+        .pipe(gulp.dest(structure.dest.misc))
+        .pipe(robots({
+            useragent: '*',
+            allow: ['folder1/', 'folder2/'],
+            disallow: ['cgi-bin/']
+        }))
+        .pipe(gulp.dest(structure.dest.misc))
+        .pipe(humans({
+            thanks: [
+                'Node (@nodejs on Twitter)',
+                'Gulp (@gulpjs on Twitter)'
+            ],
+            site: [
+                'Standards: HTML5, CSS3',
+                'Components: jQuery, Normalize.css',
+                'Software: Atom'
+            ],
+            note: 'Built with love by ...'
+        }))
         .pipe(gulp.dest(structure.dest.misc))
         .pipe(bs.stream())
 })
@@ -144,34 +140,6 @@ gulp.task('sitemap', () => {
         }))
         .pipe(gulp.dest(structure.dest.dir));
 })
-
-gulp.task('robots', () => {
-    gulp.src(structure.src.root)
-        .pipe(robots({
-            useragent: '*',
-            allow: ['folder1/', 'folder2/'],
-            disallow: ['cgi-bin/']
-        }))
-        .pipe(gulp.dest(structure.dest.misc));
-})
-
-gulp.task('humans', () => {
-    gulp.src(structure.src.root)
-        .pipe(humans({
-            thanks: [
-                'Node (@nodejs on Twitter)',
-                'Gulp (@gulpjs on Twitter)'
-            ],
-            site: [
-                'Standards: HTML5, CSS3',
-                'Components: jQuery, Normalize.css',
-                'Software: Atom'
-            ],
-            note: 'Built with love by ...'
-        }))
-        .pipe(gulp.dest(structure.dest.misc));
-})
-
 
 gulp.task('deploy', () => {
     gulp.src(structure.src.deploy)
@@ -217,5 +185,5 @@ gulp.task('serve', () => {
 
 // default 'gulp' task
 gulp.task('default', () => {
-    runOrder('pages', 'index', 'scss', 'js', 'img', 'serve')
+    runOrder('pages', 'index', 'scss', 'js', 'img', 'serve', 'misc', 'sitemap')
 })
