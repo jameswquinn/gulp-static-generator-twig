@@ -16,7 +16,7 @@ data: {
         "og__url": "<HOMEPAGE URL HERE> e.g. http: //example.com",
         "base__url": ""
     },
-    "nav": [
+    "navigation": [
         {
             "label": "home",
             "href": "/",
@@ -31,6 +31,11 @@ data: {
             "label": "contact",
             "href": "/contact",
             "weight": 2
+        },
+        {
+            "label": "play",
+            "href": "/play",
+            "weight": 3
         }
     ]
 },

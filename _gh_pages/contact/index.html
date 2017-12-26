@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TITLE HERE</title>
+    <link rel="stylesheet" href="/css/app.min.css">
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="pragma" content="no-cache" />
+    <!--MetaTag-->
     <meta name="description" content="<LONG FORM DESCRIPTION HERE>" />
     <meta name="copyright" content="<COPYRIGHT HERE>" />
     <meta name="robot" content="noindex, nofollow" />
+    <!-- Meta Facebook Markup -->
     <meta property="og:image" content="https: //assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg?<OPEN GRAPH IMAGE HERE>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
     <meta property="og:title" content="TITLE HERE">
     <meta property="og:description" content="<SHORT FORM DESCRIPTION HERE>">
     <meta property="og:url" content="<HOMEPAGE URL HERE> e.g. http: //example.com">
+    <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="<SITE NAME HERE>" />
     <meta name="twitter:image" content="https: //assets.burberry.com/is/image/Burberryltd/6cd9641a46601e40e8e3ffad2cc1cede38b723d7.jpg?<OPEN GRAPH IMAGE HERE>" />
@@ -27,8 +32,6 @@
     <link rel="manifest" href="/manifest.json">
     <link type="text/plain" rel="author" href="/humans.txt" />
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/css/app.min.css">
-    <title>TITLE HERE</title>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -40,38 +43,48 @@
     </script>
   </head>
   <body>
-    <div id="content">
+    <main id="main" class="container">
       <!-- Navigation Partial -->
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/about">ABOUT</a>
-        <a href="/contact">CONTACT</a>
+      <nav class="maskhead__navigation">
+        <ul>
+          <li>
+            <a target="_self" href="/">home</a>
+          </li>
+          <li>
+            <a target="_self" href="/about">about</a>
+          </li>
+          <li>
+            <a target="_self" href="/contact">contact</a>
+          </li>
+          <li>
+            <a target="_self" href="/play">play</a>
+          </li>
+        </ul>
       </nav>
-      <section class="container" id="getting-started">
-        <h1>contact</h1>
-        <h3 class="title">Getting Started</h3>
-        <p class="description">There are some ways to get started. First, see all download options available below, then choose the most suitable option for your need. Now you should add the main file of the Milligram and the CSS Reset in the header of your project. Just that!</p>
+      <h1>contact</h1>
+      <h3 class="title">Getting Started</h3>
+      <p class="description">There are some ways to get started. First, see all download options available below, then choose the most suitable option for your need. Now you should add the main file of the Milligram and the CSS Reset in the header of your project. Just that!</p>
+      <p>
+        <a class="button download" href="https://github.com/milligram/milligram/archive/master.zip" title="Download Milligram">Download Milligram</a>
+      </p>
+      <div class="example">
         <p>
-          <a class="button download" href="https://github.com/milligram/milligram/archive/master.zip" title="Download Milligram">Download Milligram</a>
+          <strong>Install with Bower</strong>
         </p>
-        <div class="example">
-          <p>
-            <strong>Install with Bower</strong>
-          </p>
-          <p>Milligram is available to install using Bower.</p>
-        </div><pre class="code prettyprint"><code class="code-content">$ bower install milligram</code></pre>
-        <p>
-          <strong>Install with npm</strong>
-        </p>
-        <p>Milligram is also available to install using npm.</p><pre class="code prettyprint"><code class="code-content">$ npm install milligram</code></pre>
-        <p>
-          <strong>Install with Yarn</strong>
-        </p>
-        <p>Milligram is also available to install using Yarn.</p><pre class="code prettyprint"><code class="code-content">$ yarn add milligram</code></pre>
-        <p>
-          <strong>What's included</strong>
-        </p>
-        <p>Once downloaded, extract the compressed folder to see the main file in the uncompressed and minified version.</p><pre class="code prettyprint lang-md"><code class="code-content">milligram/
+        <p>Milligram is available to install using Bower.</p>
+      </div><pre class="code prettyprint"><code class="code-content">$ bower install milligram</code></pre>
+      <p>
+        <strong>Install with npm</strong>
+      </p>
+      <p>Milligram is also available to install using npm.</p><pre class="code prettyprint"><code class="code-content">$ npm install milligram</code></pre>
+      <p>
+        <strong>Install with Yarn</strong>
+      </p>
+      <p>Milligram is also available to install using Yarn.</p><pre class="code prettyprint"><code class="code-content">$ yarn add milligram</code></pre>
+      <p>
+        <strong>What's included</strong>
+      </p>
+      <p>Once downloaded, extract the compressed folder to see the main file in the uncompressed and minified version.</p><pre class="code prettyprint lang-md"><code class="code-content">milligram/
 ├── examples/
 │   └── index.html
 ├── dist/
@@ -79,12 +92,12 @@
 │   └── milligram.min.css
 ├── license
 └── readme.md</code></pre>
-        <p>
-          <strong>Usage</strong>
-        </p>
-        <p>First, use any method mentioned above to download Milligram. Then, just add these tags in the head. Milligram is also available via
-          <a href="https://cdnjs.com/libraries/milligram" title="Milligram is also available via CDN" target="_blank" rel="noopener">
-          CDN</a>.</p><pre class="code prettyprint"><code class="code-content">
+      <p>
+        <strong>Usage</strong>
+      </p>
+      <p>First, use any method mentioned above to download Milligram. Then, just add these tags in the head. Milligram is also available via
+        <a href="https://cdnjs.com/libraries/milligram" title="Milligram is also available via CDN" target="_blank" rel="noopener">
+        CDN</a>.</p><pre class="code prettyprint"><code class="code-content">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 
 
@@ -94,16 +107,16 @@
 <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 
 </code></pre>
-        <p>
-          <strong>CLI</strong>
-        </p>
-        <p>A CLI for getting started with Milligram. It offers a super simple boilerplate project with Milligram.</p><pre class="code prettyprint"><code class="code-content">$ npm install -g milligram-cli</code></pre>
-        <p>Create a new app using the command <code>milligram init</code>, then install dependencies and run with <code>npm start</code>.</p><pre class="code prettyprint"><code class="code-content">$ milligram init new_app
+      <p>
+        <strong>CLI</strong>
+      </p>
+      <p>A CLI for getting started with Milligram. It offers a super simple boilerplate project with Milligram.</p><pre class="code prettyprint"><code class="code-content">$ npm install -g milligram-cli</code></pre>
+      <p>Create a new app using the command <code>milligram init</code>, then install dependencies and run with <code>npm start</code>.</p><pre class="code prettyprint"><code class="code-content">$ milligram init new_app
 $ cd new_app
 $ npm start</code></pre>
-        <p>See more examples of
-          <strong>getting started</strong>
-          <a href="getting-started.html" title="Examples about getting started">here</a>.</p>
+      <p>See more examples of
+        <strong>getting started</strong>
+        <a href="getting-started.html" title="Examples about getting started">here</a>.</p>
       </section>
       <section class="container" id="typography">
         <h3 class="title">Typography</h3>
@@ -321,7 +334,7 @@ $ npm start</code></pre>
               </tr>
             </tbody>
           </table>
-    </div><pre class="code prettyprint"><code class="code-content"><table>
+          </div><pre class="code prettyprint"><code class="code-content"><table>
   <thead>
     <tr>
       <th>Name</th>
@@ -347,44 +360,44 @@ $ npm start</code></pre>
 </table>
 
 </code></pre>
-    <p>See more examples of
-      <strong>tables</strong>
-      <a href="tables.html" title="Examples about tables">here</a>.</p>
-    </section>
-    <section class="container" id="grids">
-      <h3 class="title">Grids</h3>
-      <p class="description">The Grid is a fluid system with a max width of <code>112.0rem</code>
-        <small>(1120px)</small>, that shrinks with the browser/device at smaller sizes. The max width can be changed with one line of CSS and all columns will resize accordingly. Milligram is different than most because of its use of the
-        <strong>CSS Flexible Box Layout Module standard</strong>. The advantage is the simplicity, and we know that a functional code is very important for maintainability and scalability. Simply add columns you want in a row, and they'll evenly take up the available
-        space. If you want three columns, add three columns, if you want five columns, add five columns. There is no restriction on number of columns, but we advise you to follow a design pattern of grid system. See more tips on best practices in the
-        <a
-          href="#tips" title="Tips"> tips</a>.</p>
-      <div class="example">
-        <div class="container">
-          <div class="row">
-            <div class="column">
-              <span class="column-demo">.column</span>
+          <p>See more examples of
+            <strong>tables</strong>
+            <a href="tables.html" title="Examples about tables">here</a>.</p>
+      </section>
+      <section class="container" id="grids">
+        <h3 class="title">Grids</h3>
+        <p class="description">The Grid is a fluid system with a max width of <code>112.0rem</code>
+          <small>(1120px)</small>, that shrinks with the browser/device at smaller sizes. The max width can be changed with one line of CSS and all columns will resize accordingly. Milligram is different than most because of its use of the
+          <strong>CSS Flexible Box Layout Module standard</strong>. The advantage is the simplicity, and we know that a functional code is very important for maintainability and scalability. Simply add columns you want in a row, and they'll evenly take up the
+          available space. If you want three columns, add three columns, if you want five columns, add five columns. There is no restriction on number of columns, but we advise you to follow a design pattern of grid system. See more tips on best practices
+          in the
+          <a href="#tips" title="Tips"> tips</a>.</p>
+        <div class="example">
+          <div class="container">
+            <div class="row">
+              <div class="column">
+                <span class="column-demo">.column</span>
+              </div>
+              <div class="column">
+                <span class="column-demo">.column</span>
+              </div>
+              <div class="column">
+                <span class="column-demo">.column</span>
+              </div>
+              <div class="column">
+                <span class="column-demo">.column</span>
+              </div>
             </div>
-            <div class="column">
-              <span class="column-demo">.column</span>
-            </div>
-            <div class="column">
-              <span class="column-demo">.column</span>
-            </div>
-            <div class="column">
-              <span class="column-demo">.column</span>
+            <div class="row">
+              <div class="column">
+                <span class="column-demo">.column</span>
+              </div>
+              <div class="column column-50 column-offset-25">
+                <span class="column-demo">.column-50.column-offset-25</span>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="column">
-              <span class="column-demo">.column</span>
-            </div>
-            <div class="column column-50 column-offset-25">
-              <span class="column-demo">.column-50.column-offset-25</span>
-            </div>
-          </div>
-        </div>
-      </div><pre class="code prettyprint"><code class="code-content">
+        </div><pre class="code prettyprint"><code class="code-content">
 <div class="container">
 
   <div class="row">
@@ -402,28 +415,28 @@ $ npm start</code></pre>
 </div>
 
 </code></pre>
-      <p>See more examples of
-        <strong>grids</strong>
-        <a href="grids.html" title="Examples about grids">here</a>.</p>
-    </section>
-    <section class="container" id="codes">
-      <h3 class="title">Codes</h3>
-      <p class="description">The Code element represents a fragment of computer code. Just wrap anything in a <code>code</code> and it will appear like this. if you need a block, by default, enter the <code>code</code> within the <code>pre</code>element.</p>
-      <div class="example"><pre><code>.milligram {
+        <p>See more examples of
+          <strong>grids</strong>
+          <a href="grids.html" title="Examples about grids">here</a>.</p>
+      </section>
+      <section class="container" id="codes">
+        <h3 class="title">Codes</h3>
+        <p class="description">The Code element represents a fragment of computer code. Just wrap anything in a <code>code</code> and it will appear like this. if you need a block, by default, enter the <code>code</code> within the <code>pre</code>element.</p>
+        <div class="example"><pre><code>.milligram {
   color: #9b4dca;
 }</code></pre></div><pre class="code prettyprint"><code class="code-content"><pre><code>
 .milligram {
   color: #9b4dca;
 }
 </code></pre></code>
-      </pre>
-      <p>See more
-        <strong>code</strong> examples
-        <a href="codes.html" title="Examples about codes">here</a>.</p>
-    </section>
-    <section class="container" id="utilities">
-      <h3 class="title">Utilities</h3>
-      <p class="description">Milligram has some functional classes to improve the performance and productivity everyday.</p><pre class="code prettyprint"><code class="code-content">
+        </pre>
+        <p>See more
+          <strong>code</strong> examples
+          <a href="codes.html" title="Examples about codes">here</a>.</p>
+      </section>
+      <section class="container" id="utilities">
+        <h3 class="title">Utilities</h3>
+        <p class="description">Milligram has some functional classes to improve the performance and productivity everyday.</p><pre class="code prettyprint"><code class="code-content">
 
 
 <div class="clearfix">
@@ -433,36 +446,36 @@ $ npm start</code></pre>
   <div class="float-right"></div>
 
 </div></code></pre>
-      <p>See more examples of
-        <strong>utilities</strong>
-        <a href="utilities.html" title="Examples about utilities">here</a>.</p>
-    </section>
-    <section class="container" id="tips">
-      <h3 class="title">Tips</h3>
-      <p class="description">Tips, techniques, and best practice on using Cascading Style Sheets.</p>
-      <p>
-        <strong>Mobile First</strong>
-      </p>
-      <p>The Mobile First is the design strategy that takes priority development for mobile devices like smartphones and tablets. It means all styles outside of a media queries apply to all devices, then larger screens are targeted for enhancement. This
-        prevents small devices from having to parse tons of unused CSS. Milligram use some breakpoints like these:</p>
-      <div class="example">
-        <div class="row">
-          <ul>
-            <li>Larger than
-              <strong>Mobile</strong> screen: 40.0rem
-              <span class="heading-font-size">(640px)</span>
-            </li>
-            <li>Larger than
-              <strong>Tablet</strong> screen: 80.0rem
-              <span class="heading-font-size">(1280px)</span>
-            </li>
-            <li>Larger than
-              <strong>Desktop</strong> screen: 120.0rem
-              <span class="heading-font-size">(1920px)</span>
-            </li>
-          </ul>
-        </div>
-      </div><pre class="code prettyprint"><code class="code-content">/* Mobile First Media Queries */
+        <p>See more examples of
+          <strong>utilities</strong>
+          <a href="utilities.html" title="Examples about utilities">here</a>.</p>
+      </section>
+      <section class="container" id="tips">
+        <h3 class="title">Tips</h3>
+        <p class="description">Tips, techniques, and best practice on using Cascading Style Sheets.</p>
+        <p>
+          <strong>Mobile First</strong>
+        </p>
+        <p>The Mobile First is the design strategy that takes priority development for mobile devices like smartphones and tablets. It means all styles outside of a media queries apply to all devices, then larger screens are targeted for enhancement. This
+          prevents small devices from having to parse tons of unused CSS. Milligram use some breakpoints like these:</p>
+        <div class="example">
+          <div class="row">
+            <ul>
+              <li>Larger than
+                <strong>Mobile</strong> screen: 40.0rem
+                <span class="heading-font-size">(640px)</span>
+              </li>
+              <li>Larger than
+                <strong>Tablet</strong> screen: 80.0rem
+                <span class="heading-font-size">(1280px)</span>
+              </li>
+              <li>Larger than
+                <strong>Desktop</strong> screen: 120.0rem
+                <span class="heading-font-size">(1920px)</span>
+              </li>
+            </ul>
+          </div>
+        </div><pre class="code prettyprint"><code class="code-content">/* Mobile First Media Queries */
 
 /* Base style */
 { ... }
@@ -475,49 +488,49 @@ $ npm start</code></pre>
 
 /* Larger than desktop screen */
 @media (min-width: 120.0rem) { ... }</code></pre>
-      <p>
-        <strong>Embed Font</strong>
-      </p>
-      <p>
-        <strong>Milligram</strong> uses the <code>font-family</code>
-        <a href="https://www.google.com/fonts/specimen/Roboto" title="Roboto by Christian Robertson" target="_blank" rel="noopener"> Roboto</a>, created by
-        <u>Christian Robertson</u>, and provided by Google. Customize your projects using
-        <a href="https://fonts.google.com">Google Fonts</a>. To embed your selected fonts into a webpage, copy this code into the
-        <head> of your HTML document.</p><pre class="code prettyprint"><code class="code-content">/* Embed Font */
+        <p>
+          <strong>Embed Font</strong>
+        </p>
+        <p>
+          <strong>Milligram</strong> uses the <code>font-family</code>
+          <a href="https://www.google.com/fonts/specimen/Roboto" title="Roboto by Christian Robertson" target="_blank" rel="noopener"> Roboto</a>, created by
+          <u>Christian Robertson</u>, and provided by Google. Customize your projects using
+          <a href="https://fonts.google.com">Google Fonts</a>. To embed your selected fonts into a webpage, copy this code into the
+          <head> of your HTML document.</p><pre class="code prettyprint"><code class="code-content">/* Embed Font */
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab">
 
 /* Use the following CSS rules to specify these families */
 body {
   font-family: 'Roboto Slab', serif;
 }</code></pre>
-      <p>
-        <strong>Extending The Inheritances</strong>
-      </p>
-      <p>The style of an element can be defined in several different locations, which interact in a complex way. It is this form of interaction makes CSS powerful, but it can make it confusing and difficult to debug.</p>
-      <div class="example">
-        <div class="row">
-          <div class="column">
-            <a class="button" href="javascript: void(0)">Default .button</a>
-            <a class="button button-outline" href="javascript: void(0)">Outlined .button</a>
-            <a class="button button-clear" href="javascript: void(0)">Clear .button</a>
+        <p>
+          <strong>Extending The Inheritances</strong>
+        </p>
+        <p>The style of an element can be defined in several different locations, which interact in a complex way. It is this form of interaction makes CSS powerful, but it can make it confusing and difficult to debug.</p>
+        <div class="example">
+          <div class="row">
+            <div class="column">
+              <a class="button" href="javascript: void(0)">Default .button</a>
+              <a class="button button-outline" href="javascript: void(0)">Outlined .button</a>
+              <a class="button button-clear" href="javascript: void(0)">Clear .button</a>
+            </div>
+            <div class="column">
+              <a class="button button-black" href="javascript: void(0)">.button-black</a>
+              <a class="button button-black button-outline" href="javascript: void(0)">.button-black</a>
+              <a class="button button-black button-clear" href="javascript: void(0)">.button-black</a>
+            </div>
+            <div class="column column-20">
+              <a class="button button-small" href="javascript: void(0)">.button-small</a>
+              <a class="button button-small button-outline" href="javascript: void(0)">.button-small</a>
+              <a class="button button-small button-clear" href="javascript: void(0)">.button-small</a>
+            </div>
+            <div class="column">
+              <a class="button button-large" href="javascript: void(0)">.button-large</a>
+              <a class="button button-large button-outline" href="javascript: void(0)">.button-large</a>
+              <a class="button button-large button-clear" href="javascript: void(0)">.button-large</a>
+            </div>
           </div>
-          <div class="column">
-            <a class="button button-black" href="javascript: void(0)">.button-black</a>
-            <a class="button button-black button-outline" href="javascript: void(0)">.button-black</a>
-            <a class="button button-black button-clear" href="javascript: void(0)">.button-black</a>
-          </div>
-          <div class="column column-20">
-            <a class="button button-small" href="javascript: void(0)">.button-small</a>
-            <a class="button button-small button-outline" href="javascript: void(0)">.button-small</a>
-            <a class="button button-small button-clear" href="javascript: void(0)">.button-small</a>
-          </div>
-          <div class="column">
-            <a class="button button-large" href="javascript: void(0)">.button-large</a>
-            <a class="button button-large button-outline" href="javascript: void(0)">.button-large</a>
-            <a class="button button-large button-clear" href="javascript: void(0)">.button-large</a>
-          </div>
-        </div>
-      </div><pre class="code prettyprint"><code class="code-content">/* Extending The Inheritances */
+        </div><pre class="code prettyprint"><code class="code-content">/* Extending The Inheritances */
 
 /* Custom color */
 .button-black {
@@ -547,99 +560,99 @@ body {
   line-height: 4.5rem;
   padding: 0 2rem;
 }</code></pre>
-      <p>See more examples of
-        <strong>tips</strong>
-        <a href="tips.html" title="Examples about tips">here</a>.</p>
-    </section>
-    <section class="container" id="browser-support">
-      <h3 class="title">Browser Support</h3>
-      <p class="description">While not designed for old browsers, Milligram has support for some old versions, but we recommend using the latest versions of their browsers.</p>
-      <div class="example">
+        <p>See more examples of
+          <strong>tips</strong>
+          <a href="tips.html" title="Examples about tips">here</a>.</p>
+      </section>
+      <section class="container" id="browser-support">
+        <h3 class="title">Browser Support</h3>
+        <p class="description">While not designed for old browsers, Milligram has support for some old versions, but we recommend using the latest versions of their browsers.</p>
+        <div class="example">
+          <ul>
+            <li>Brave
+              <small>latest</small>
+            </li>
+            <li>Chrome
+              <small>latest</small>
+            </li>
+            <li>Edge
+              <small>latest</small>
+            </li>
+            <li>Firefox
+              <small>latest</small>
+            </li>
+            <li>IE
+              <small>latest</small>
+            </li>
+            <li>Opera
+              <small>latest</small>
+            </li>
+            <li>Safari
+              <small>latest</small>
+            </li>
+          </ul>
+        </div>
+        <p>See more examples of
+          <strong>browser support</strong>
+          <a href="browser-support.html" title="Examples about browser support">here</a>.</p>
+      </section>
+      <section class="container" id="examples">
+        <h3 class="title">Examples</h3>
+        <p>You can view more examples of using Milligram.</p>
         <ul>
-          <li>Brave
-            <small>latest</small>
+          <li>
+            <a href="getting-started.html" title="Getting Started">Getting Started</a>
           </li>
-          <li>Chrome
-            <small>latest</small>
+          <li>
+            <a href="typography.html" title="Typography">Typography</a>
           </li>
-          <li>Edge
-            <small>latest</small>
+          <li>
+            <a href="blockquotes.html" title="Blockquotes">Blockquotes</a>
           </li>
-          <li>Firefox
-            <small>latest</small>
+          <li>
+            <a href="buttons.html" title="Buttons">Buttons</a>
           </li>
-          <li>IE
-            <small>latest</small>
+          <li>
+            <a href="lists.html" title="Lists">Lists</a>
           </li>
-          <li>Opera
-            <small>latest</small>
+          <li>
+            <a href="forms.html" title="Forms">Forms</a>
           </li>
-          <li>Safari
-            <small>latest</small>
+          <li>
+            <a href="tables.html" title="Tables">Tables</a>
+          </li>
+          <li>
+            <a href="grids.html" title="Grids">Grids</a>
+          </li>
+          <li>
+            <a href="codes.html" title="Codes">Codes</a>
+          </li>
+          <li>
+            <a href="utilities.html" title="Utilities">Utilities</a>
+          </li>
+          <li>
+            <a href="tips.html" title="Tips">Tips</a>
+          </li>
+          <li>
+            <a href="browser-support.html" title="Browser Support">Browser Support</a>
           </li>
         </ul>
-      </div>
-      <p>See more examples of
-        <strong>browser support</strong>
-        <a href="browser-support.html" title="Examples about browser support">here</a>.</p>
-    </section>
-    <section class="container" id="examples">
-      <h3 class="title">Examples</h3>
-      <p>You can view more examples of using Milligram.</p>
-      <ul>
-        <li>
-          <a href="getting-started.html" title="Getting Started">Getting Started</a>
-        </li>
-        <li>
-          <a href="typography.html" title="Typography">Typography</a>
-        </li>
-        <li>
-          <a href="blockquotes.html" title="Blockquotes">Blockquotes</a>
-        </li>
-        <li>
-          <a href="buttons.html" title="Buttons">Buttons</a>
-        </li>
-        <li>
-          <a href="lists.html" title="Lists">Lists</a>
-        </li>
-        <li>
-          <a href="forms.html" title="Forms">Forms</a>
-        </li>
-        <li>
-          <a href="tables.html" title="Tables">Tables</a>
-        </li>
-        <li>
-          <a href="grids.html" title="Grids">Grids</a>
-        </li>
-        <li>
-          <a href="codes.html" title="Codes">Codes</a>
-        </li>
-        <li>
-          <a href="utilities.html" title="Utilities">Utilities</a>
-        </li>
-        <li>
-          <a href="tips.html" title="Tips">Tips</a>
-        </li>
-        <li>
-          <a href="browser-support.html" title="Browser Support">Browser Support</a>
-        </li>
-      </ul>
-    </section>
-    <section class="container" id="contributing">
-      <h3 class="title">Contributing</h3>
-      <p>Want to contribute? Follow these
-        <a href="https://github.com/milligram/milligram/blob/master/.github/contributing.md" title="Contributing"> recommendations</a>.</p>
-    </section>
-    <footer class="footer">
-      <section class="container">
-        <p>Designed with ♥ by
-          <a href="http://cjpatoilo.com" title="CJ Patoilo" target="_blank"> CJ Patoilo</a>. Licensed under the
-          <a href="https://github.com/milligram/milligram#license" title="MIT License" target="_blank"> MIT License</a>.</p>
       </section>
-    </footer>
+      <section class="container" id="contributing">
+        <h3 class="title">Contributing</h3>
+        <p>Want to contribute? Follow these
+          <a href="https://github.com/milligram/milligram/blob/master/.github/contributing.md" title="Contributing"> recommendations</a>.</p>
+      </section>
+      <footer class="footer">
+        <section class="container">
+          <p>Designed with ♥ by
+            <a href="http://cjpatoilo.com" title="CJ Patoilo" target="_blank"> CJ Patoilo</a>. Licensed under the
+            <a href="https://github.com/milligram/milligram#license" title="MIT License" target="_blank"> MIT License</a>.</p>
+        </section>
+      </footer>
     </main>
-    </div>
     <div id="footer"> </div>
+    </main>
     <script src="/js/main.min.js"></script>
     <!-- Google Analytics -->
     <script>

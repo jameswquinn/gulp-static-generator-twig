@@ -1,15 +1,13 @@
 {% extends "../_layouts/_base.html" %}
+{# Change meta tags for twitter:card and facbook #}
+{% block canonical %}{% endblock %}
 {% block description %}{% endblock %}
 {% block og__image %}{% endblock %}
+{% block title %}{% endblock %}
+
+{# body content#}
 {% block content %}
-
-
-
-
-
-
-  <section class="container" id="getting-started">
-  <h1>contact</h1>
+<h1>contact</h1>
     <h3 class="title">Getting Started</h3><p class="description">There are some ways to get started. First, see all download options available below, then choose the most suitable option for your need. Now you should add the main file of the Milligram and the CSS Reset in the header of your project. Just that!</p><p><a class="button download" href="https://github.com/milligram/milligram/archive/master.zip" title="Download Milligram">Download Milligram</a></p><div class="example"><p><strong>Install with Bower</strong></p><p>Milligram is available to install using Bower.</p></div><pre class="code prettyprint"><code class="code-content">$ bower install milligram</code></pre><p><strong>Install with npm</strong></p><p>Milligram is also available to install using npm.</p><pre class="code prettyprint"><code class="code-content">$ npm install milligram</code></pre><p><strong>Install with Yarn</strong></p><p>Milligram is also available to install using Yarn.</p><pre class="code prettyprint"><code class="code-content">$ yarn add milligram</code></pre><p><strong>What's included</strong></p><p>Once downloaded, extract the compressed folder to see the main file in the uncompressed and minified version.</p><pre class="code prettyprint lang-md"><code class="code-content">milligram/
 ├── examples/
 │   └── index.html

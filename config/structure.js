@@ -14,7 +14,7 @@ exports.src = {
   index:   `${pages}/index.html`,
   pages:   `${pages}/!(index).html`,
   layouts: `${pages}/**/_*.html`,
-  scss:    `${assets}/${css}/*.{scss,sass}`,
+  scss:    `${assets}/${css}/*.{css,scss,sass}`,
   js:      `${assets}/${js}/**/*`,
   img:     `${assets}/${img}/**/*`,
   misc:    `${misc}/**/*`,

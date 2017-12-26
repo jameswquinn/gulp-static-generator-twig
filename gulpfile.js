@@ -23,10 +23,14 @@ const moment = require('moment')
 const cleanCSS = require('gulp-clean-css')
 const babel = require('gulp-babel')
 const sassLint = require('gulp-sass-lint')
+const uncss = require('gulp-uncss')
+const postcss = require('gulp-postcss')
+const $ = require('gulp-load-plugins')()
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
 const twigOptions = require('./config/twig')
+const responsiveOpions = require('./config/responsive')
 const reporter = require('./config/reporter')
 const server = require('./config/server')
 
@@ -67,26 +71,9 @@ gulp.task('pages', () => {
 // 3. Add vendor prefixes
 // 4. Rename to '*.min.css'
 // 5. Minify the final CSS
-gulp.task('!scss', () => {
-    gulp.src(structure.src.scss)
-        .pipe(plumber(reporter.onError))
-        .pipe(sass())
-        .pipe(prefix('last 2 versions'))
-        .pipe(rename({
-            basename: "app",
-            suffix: '.min'
-        }))
-        .pipe(cssnano())
-        .pipe(gulp.dest(structure.dest.css))
-        .pipe(bs.stream())
-})
-
 gulp.task('scss',() => {
-  return gulp.src(structure.src.scss)
+   gulp.src(structure.src.scss)
     .pipe(plumber(reporter.onError))
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(prefix('last 2 versions'))
@@ -96,10 +83,21 @@ gulp.task('scss',() => {
     }))
     .pipe(cssnano())
     .pipe(cleanCSS())
+    .pipe(postcss([ require('postcss-size') ]))
+    .pipe(uncss({html: ['./_gh_pages/**/*.html']}))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(structure.dest.css))
     .pipe(bs.stream())
-});
+})
+
+gulp.task('lint__scss',() => {
+   gulp.src(structure.src.scss)
+    .pipe(plumber(reporter.onError))
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+.pipe(gulp.dest(structure.dest.css))
+})
 
 // 1. Initialize sourcemaps
 // 2. Concatenate files and rename
@@ -110,17 +108,18 @@ gulp.task('js', () => {
         .pipe(sourcemap.init())
         .pipe(concat('main.min.js'))
         .pipe(uglify())
-        .pipe(sourcemap.write())
+        .pipe(sourcemap.write('.'))
         .pipe(gulp.dest(structure.dest.js))
         .pipe(bs.stream())
 })
 
 // Copy all the images
-gulp.task('img', () => {
-    gulp.src(structure.src.img)
-        .pipe(plumber(reporter.onError))
-        .pipe(gulp.dest(structure.dest.img))
-        .pipe(bs.stream())
+gulp.task('img', function () {
+  return gulp.src(structure.src.img)
+  .pipe(plumber(reporter.onError))
+    .pipe($.responsive(responsiveOpions))
+    .pipe(gulp.dest(structure.dest.img))
+    .pipe(bs.stream())
 })
 
 // Copy all the files in /misc
@@ -155,7 +154,6 @@ gulp.task('robots', () => {
         }))
         .pipe(gulp.dest(structure.dest.misc));
 })
-
 
 gulp.task('humans', () => {
     gulp.src(structure.src.root)
