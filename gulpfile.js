@@ -32,6 +32,10 @@ const lost = require('lost')
 const autoprefixer = require('autoprefixer')
 const bem = require('postcss-bem')
 const nested = require('postcss-nested')
+const imports = require('postcss-import')
+const vars = require('postcss-simple-vars')
+const mixins = require('postcss-mixins')
+
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -81,6 +85,9 @@ gulp.task('scss',() => {
       precss(),
       postsize(),
       bem(),
+      imports(),
+      vars(),
+      mixins(),
       nested(),
       postuncss({  html: ['./_gh_pages/**/*.html']}),
       cssnano(),
