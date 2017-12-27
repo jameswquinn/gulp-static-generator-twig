@@ -1,8 +1,6 @@
 const gulp = require('gulp')
 const concat = require('gulp-concat')
-const cssnano = require('gulp-cssnano')
 const plumber = require('gulp-plumber')
-const prefix = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const sourcemap = require('gulp-sourcemaps')
@@ -20,12 +18,20 @@ const humans = require('gulp-humans')
 const deploy = require('gulp-deploy-git')
 const permalinks = require('gulp-permalinks')
 const moment = require('moment')
-const cleanCSS = require('gulp-clean-css')
 const babel = require('gulp-babel')
-const sassLint = require('gulp-sass-lint')
-const uncss = require('gulp-uncss')
-const postcss = require('gulp-postcss')
 const $ = require('gulp-load-plugins')()
+
+//postcss plugins
+const postcss = require('gulp-postcss')
+const precss = require('precss')
+const postsize = require('postcss-size')
+const rucksack = require('rucksack-css')
+const postuncss = require('postcss-uncss')
+const cssnano = require('cssnano')
+const lost = require('lost')
+const cssnext = require('postcss-cssnext')
+
+
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -67,15 +73,17 @@ gulp.task('scss',() => {
     .pipe(plumber(reporter.onError))
     .pipe(sourcemap.init())
     .pipe(sass())
-    .pipe(prefix('last 2 versions'))
-    .pipe(rename({
-        basename: "app",
-        suffix: '.min'
-    }))
-    .pipe(cssnano())
-    .pipe(cleanCSS())
-    .pipe(postcss([ require('postcss-size') ]))
-    .pipe(uncss({html: ['./_gh_pages/**/*.html']}))
+    .pipe(rename({basename: "app",suffix: '.min'}))
+    .pipe(postcss([
+      cssnext({warnForDuplicates: false, browsers: ['last 2 versions', '> 2%']}),
+      rucksack(),
+      lost(),
+      precss(),
+      postsize(),
+      postuncss({  html: ['./_gh_pages/**/*.html']}),
+      cssnano(),
+    ],
+  ))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(structure.dest.css))
     .pipe(bs.stream())
@@ -185,5 +193,5 @@ gulp.task('serve', () => {
 
 // default 'gulp' task
 gulp.task('default', () => {
-    runOrder('pages', 'index', 'scss', 'js', 'img', 'serve', 'misc', 'sitemap')
+    runOrder('pages', 'index', 'js', 'img', 'serve', 'misc', 'sitemap', 'scss')
 })
