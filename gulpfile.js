@@ -29,9 +29,9 @@ const rucksack = require('rucksack-css')
 const postuncss = require('postcss-uncss')
 const cssnano = require('cssnano')
 const lost = require('lost')
-const cssnext = require('postcss-cssnext')
-
-
+const autoprefixer = require('autoprefixer')
+const bem = require('postcss-bem')
+const nested = require('postcss-nested')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
@@ -72,14 +72,16 @@ gulp.task('scss',() => {
    gulp.src(structure.src.scss)
     .pipe(plumber(reporter.onError))
     .pipe(sourcemap.init())
-    .pipe(sass())
+    .pipe(sass()).on('error', sass.logError)
     .pipe(rename({basename: "app",suffix: '.min'}))
     .pipe(postcss([
-      cssnext({warnForDuplicates: false, browsers: ['last 2 versions', '> 2%']}),
+      autoprefixer({browsers: ['last 4 versions']}),
       rucksack(),
       lost(),
       precss(),
       postsize(),
+      bem(),
+      nested(),
       postuncss({  html: ['./_gh_pages/**/*.html']}),
       cssnano(),
     ],
